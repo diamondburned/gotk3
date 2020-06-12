@@ -98,7 +98,7 @@ func (v *Pixbuf) NativePrivate() *C.GdkPixbuf {
 
 func marshalPixbuf(p uintptr) (interface{}, error) {
 	c := C.g_value_get_object((*C.GValue)(unsafe.Pointer(p)))
-	obj := &glib.Object{glib.ToGObject(unsafe.Pointer(c))}
+	obj := glib.Take(unsafe.Pointer(c))
 	return &Pixbuf{obj}, nil
 }
 

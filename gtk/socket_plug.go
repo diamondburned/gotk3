@@ -9,9 +9,10 @@ package gtk
 // #include "socket_plug.go.h"
 import "C"
 import (
+	"unsafe"
+
 	"github.com/gotk3/gotk3/gdk"
 	"github.com/gotk3/gotk3/glib"
-	"unsafe"
 )
 
 func init() {
